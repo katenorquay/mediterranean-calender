@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Week from './components/Week'
+import Todo from './components/Todo'
 import reducer from './reducer.js'
 import {createStore} from 'redux'
 
@@ -13,7 +13,7 @@ const main = document.querySelector('main')
 
 store.subscribe( () => {
   var state = store.getState()
-  render(<Week name='mediterranean-calender' state={state} dispatch={store.dispatch} />, main)
+  render(<Todo name='mediterranean-calender' state={state} dispatch={store.dispatch} />, main)
 })
 
 store.dispatch({type: 'INIT'})

@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
+import Day from './Day'
 
 function Week(props) {
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <div className='week'></div>
-    </div>
+      <div className='week'>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      </div>
   )
 }
 
