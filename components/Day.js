@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import Time from './Time'
 
-function Day(props) {
+function Day({state}) {
   return (
-      <div className= 'day'>
-      <Time/>
-      <Time/>
-      <Time/>
-      <Time/>
-      <Time/>
-      <Time/>
+    <div>
+    {state.calendar.map(function (day){
+      return <div className='day'>
+      <Time state={state} day={day}/>
+      {day.name}
       </div>
+    })}
+    </div>
   )
 }
 

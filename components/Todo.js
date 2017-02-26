@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Week from './Week'
 
-function Todo(props) {
+function Todo({name, state, dispatch}) {
   return (
     <div>
-      <h1>{props.name}</h1>
-      <Week/>
+      <h1>{name}</h1>
+      <Week state={state}/>
     </div>
   )
 }

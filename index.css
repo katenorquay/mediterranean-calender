@@ -11,13 +11,13 @@ main {
 }
 
 .day {
-  width: 135px;
+  width: 138px;
   border: 2px solid black;
   display: inline-block;
 }
 
 .time {
-  height: 75px;
+  height: 77px;
   border: 2px solid black;
   /*display: inline-block;*/
 }

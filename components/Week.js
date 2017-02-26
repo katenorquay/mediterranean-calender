@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import Day from './Day'
 
-function Week(props) {
+function Week({state}) {
   return (
       <div className='week'>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
+      <Day state={state}/>
       </div>
   )
 }

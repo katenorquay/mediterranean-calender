@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 
-function Time(props) {
+function Time({state, day}) {
   return (
-    <div className='time'>
+    <div>
+      {day.times.map(function (time){
+        return <div className='time'>
+        {time.title}
+        </div>
+      })}
     </div>
   )
 }
