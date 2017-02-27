@@ -26,13 +26,14 @@ function Time(props) {
       {props.day.times.map(function (time){
         if(emojiX === time.x && emojiY === time.y) {
           return (
-           <div className='time'>
+           <div className={'time  time-' + time.y + '  hasEmoji'}>
             <Emoji props={props}/>
            </div>
          )
        } else {
         return (
-          <div className='time'></div>
+          <div className={'time  time-' + time.y}>
+          </div>
         )
       }
       })}
