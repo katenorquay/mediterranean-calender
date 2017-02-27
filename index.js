@@ -70,7 +70,7 @@ const initialState = {
       {id:6, title: 'dinner', x: 6, y: 5}
     ]}
   ],
-  emojiPosition: [4, 4]
+  emojiPosition: [3, 2]
 }
 
 const store = createStore(reducer, initialState)

@@ -1,10 +1,27 @@
 import React, { Component } from 'react'
 import Emoji from './Emoji'
+var DropTarget = require('react-dnd').DropTarget;
+import ItemTypes from './ItemTypes';
+
+var squareTarget = {
+  drop: function (props, monitor) {
+    moveKnight(props.x, props.y);
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver()
+  };
+}
+
 
 function Time(props) {
   var emojiX = props.state.emojiPosition[0];
   var emojiY = props.state.emojiPosition[1];
-  return (
+  var connectDropTarget = props.connectDropTarget;
+  return connectDropTarget(
     <div>
       {props.day.times.map(function (time){
         if(emojiX === time.x && emojiY === time.y) {
@@ -15,8 +32,7 @@ function Time(props) {
          )
        } else {
         return (
-          <div className='time'>
-          </div>
+          <div className='time'></div>
         )
       }
       })}
@@ -24,4 +40,4 @@ function Time(props) {
   )
 }
 
-export default Time
+module.exports = DropTarget(ItemTypes.EMOJI, squareTarget, collect)(Time);
