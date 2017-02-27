@@ -28,6 +28,8 @@
   "homepage": "https://github.com/katenorquay/mediterranean-calender",
   "dependencies": {
     "clone": "^2.1.0",
+    "react-dnd": "^2.2.3",
+    "react-dnd-html5-backend": "^2.2.3",
     "redux": "^3.6.0"
   },
   "devDependencies": {
