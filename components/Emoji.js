@@ -19,7 +19,9 @@ function collect(connect, monitor) {
     function Emoji(props) {
       const { connectDragSource, isDragging } = props;
       return connectDragSource(
-        <div className ='emoji'>♘</div>,
+        <div className ='emoji'>
+          <div className='emoji-content'>🎹</div>
+        </div>,
       );
     }
 
