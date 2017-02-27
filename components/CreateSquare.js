@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Time from './Time'
 
-function BoardSquare(props) {
+function CreateSquare(props) {
   return (
     <div>
       {props.day.times.map(function (time) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BoardSquare from './BoardSquare'
+import CreateSquare from './CreateSquare'
 
 function Day({state, dispatch}) {
   return (
@@ -7,7 +7,7 @@ function Day({state, dispatch}) {
       {state.calendar.map(function (day){
           return <div className='day'>
           <h2>{day.name}</h2>
-          <BoardSquare state={state} day={day} dispatch={dispatch} />
+          <CreateSquare state={state} day={day} dispatch={dispatch} />
       </div>
     })}
     </div>
