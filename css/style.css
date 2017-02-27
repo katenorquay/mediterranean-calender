@@ -75,6 +75,12 @@ h2 {
   line-height: 100%;
 }
 
+.emoji-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .hasEmoji { 
   /* Temporary class... eventually we will be passed in colour */
 
