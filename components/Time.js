@@ -5,7 +5,7 @@ import ItemTypes from './ItemTypes';
 
 var squareTarget = {
   drop: function (props, monitor) {
-    moveKnight(props.x, props.y);
+    props.dispatch({type: 'MOVE_EMOJI', payload: [props.x, props.y]})
   }
 };
 
@@ -20,6 +20,7 @@ function collect(connect, monitor) {
 function Time(props) {
   var emojiX = props.state.emojiPosition[0];
   var emojiY = props.state.emojiPosition[1];
+  console.log(emojiY, emojiX)
   var connectDropTarget = props.connectDropTarget;
   return connectDropTarget(
     <div>

@@ -8,7 +8,7 @@ function Todo(props) {
   return (
     <div>
       <h1>{props.name}</h1>
-      <Week state={props.state}/>
+      <Week state={props.state} dispatch={props.dispatch}/>
     </div>
   )
 }
