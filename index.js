@@ -79,7 +79,7 @@ const main = document.querySelector('main')
 
 store.subscribe( () => {
   var state = store.getState()
-  render(<Todo name='mediterranean-calender' state={state} dispatch={store.dispatch} />, main)
+  render(<Todo name='Mediterranean Calendar' state={state} dispatch={store.dispatch} />, main)
 })
 
 store.dispatch({type: 'INIT'})
