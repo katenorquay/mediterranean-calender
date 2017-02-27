@@ -5,7 +5,7 @@ import ItemTypes from './ItemTypes';
 
 var squareTarget = {
   drop: function (props, monitor) {
-    props.dispatch({type: 'MOVE_EMOJI', payload: [props.x, props.y]})
+    props.dispatch({type: 'MOVE_EMOJI', payload: [props.x, props.y, props.day]})
   }
 };
 
