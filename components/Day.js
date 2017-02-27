@@ -6,8 +6,8 @@ function Day({state}) {
     <div>
     {state.calendar.map(function (day){
       return <div className='day'>
-      <Time state={state} day={day}/>
       {day.name}
+      <Time state={state} day={day}/>
       </div>
     })}
     </div>

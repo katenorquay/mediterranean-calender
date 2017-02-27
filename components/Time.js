@@ -1,16 +1,27 @@
 import React, { Component } from 'react'
+import Emoji from './Emoji'
 
-function Time({state, day}) {
+function Time(props) {
+  var emojiX = props.state.emojiPosition[0];
+  var emojiY = props.state.emojiPosition[1];
   return (
     <div>
-      {day.times.map(function (time){
-        return <div className='time'>
-        {time.title}
-        </div>
+      {props.day.times.map(function (time){
+        if(emojiX === time.x && emojiY === time.y) {
+          return (
+           <div className='time'>
+            <Emoji props={props}/>
+           </div>
+         )
+       } else {
+        return (
+          <div className='time'>
+          </div>
+        )
+      }
       })}
     </div>
   )
 }
-
 
 export default Time
