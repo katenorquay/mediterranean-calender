@@ -27,4 +27,4 @@ function collect(connect, monitor) {
       );
     }
 
-  module.exports = DragSource(ItemTypes.EMOJI, emojiSource, collect)(Emoji)
+  module.exports = DragSource(props => props.type, emojiSource, collect)(Emoji)

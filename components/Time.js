@@ -6,7 +6,9 @@ import CreateEmoji from './CreateEmoji'
 
 var squareTarget = {
   drop: function (props, monitor) {
-    props.dispatch({type: 'MOVE_EMOJI', payload: [props.x, props.y]})
+    var item = monitor.getItem()
+    console.log('this is the item', item)
+    props.dispatch({type: 'MOVE_EMOJI', payload: [item.id, props.x, props.y]})
   }
 };
 
