@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import Week from './Week'
-import Emoji from './Emoji'
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 
 function Todo(props) {
   console.log(props.state)
@@ -15,4 +12,4 @@ function Todo(props) {
 }
 
 
-module.exports = DragDropContext(HTML5Backend)(Todo)
+module.exports = Todo

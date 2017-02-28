@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { DragSource } from 'react-dnd';
 import ItemTypes from './ItemTypes';
+import Week from './Week'
 
 const emojiSource = {
   beginDrag(props) {
     return {
-      id: props.id
+      id: props.id,
+      board: props.week
     };
   },
 };

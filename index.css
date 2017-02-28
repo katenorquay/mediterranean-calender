@@ -3,3 +3,15 @@
 .icon {
   max-width: 70px;
 }
+
+.week {
+  border: solid 2px black;
+  height: 500px;
+}
+
+
+.time {
+  border: solid 2px black;
+  height: 100px;
+  width: 100px;
+}*/

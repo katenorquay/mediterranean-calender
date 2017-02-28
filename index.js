@@ -71,10 +71,20 @@ const initialState = {
       {id:6, title: 'dinner', x: 6, y: 5, hasEmoji: false}
     ]}
   ],
-  emojis: [
-    {id: 1, type: ItemTypes.EMOJI, icon: 'https://s-media-cache-ak0.pinimg.com/736x/75/74/36/7574363a1729dfc747f8b963464b92da.jpg', position: [3, 4]},
-    {id: 2, type: ItemTypes.SAD, icon: 'http://pix.iemoji.com/images/emoji/apple/ios-9/256/face-with-open-mouth-and-cold-sweat.png', position: [0, 0]},
-  ],
+  emojis: {
+    'coolEmoji': {
+      x: 3, y: 4,
+      id: 1,
+      type: ItemTypes.EMOJI,
+      icon: 'https://s-media-cache-ak0.pinimg.com/736x/75/74/36/7574363a1729dfc747f8b963464b92da.jpg'
+    },
+    'sadEmoji': {
+      x: 0, y: 0,
+      id: 2,
+      type: ItemTypes.SAD,
+      icon: 'http://pix.iemoji.com/images/emoji/apple/ios-9/256/face-with-open-mouth-and-cold-sweat.png'
+    }
+  }
 }
 
 const store = createStore(reducer, initialState)

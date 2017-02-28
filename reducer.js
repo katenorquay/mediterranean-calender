@@ -4,6 +4,10 @@ function reducer(state, action) {
   var newState = clone(state)
   var {type, payload} = action
   switch(type) {
+    case 'CHANGE_EMOJIS':
+    newState.emojis = payload
+    return newState
+    break;
     case 'MOVE_EMOJI':
       newState.emojis.map(function (emoji) {
         return emoji.position[0] = payload[1]
@@ -24,9 +28,11 @@ function reducer(state, action) {
         })
       })
       return newState
+      break;
     case 'RESET':
       newState.board = null
       return newState
+      break;
     default:
     return newState
   }
