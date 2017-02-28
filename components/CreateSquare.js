@@ -14,4 +14,4 @@ function CreateSquare(props) {
 }
 
 
-module.exports = BoardSquare
+module.exports = CreateSquare

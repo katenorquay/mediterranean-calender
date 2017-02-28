@@ -5,14 +5,22 @@ function reducer(state, action) {
   var {type, payload} = action
   switch(type) {
     case 'MOVE_EMOJI':
-      newState.emojiPosition[0] = payload[0]
-      newState.emojiPosition[1] = payload[1]
-      var something = newState.calendar.map(function (day) {
-        return day.times.map(function (time) {
-          return time.x === payload[0] && time.y === payload[1]
+      newState.emojis.map(function (emoji) {
+        return emoji.position[0] = payload[0]
+      })
+      newState.emojis.map(function (emoji) {
+        return emoji.position[1] = payload[1]
+      })
+      newState.calendar.map(function (day) {
+        day.times.find(function (time) {
+          if (time.x === payload[0] && time.y === payload[1]) {
+            time.hasEmoji = true
+          }
+          else {
+            time.hasEmoji = false
+          }
         })
       })
-      something.hasEmoji = true
       return newState
     case 'RESET':
       newState.board = null
