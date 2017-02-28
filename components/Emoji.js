@@ -22,7 +22,7 @@ function collect(connect, monitor) {
       const { id, connectDragSource, isDragging } = props;
       return connectDragSource(
         <div className='emoji'>
-          <img className='emoji-content' src={props.icon}></img>
+          <img className='icon' src={props.icon}></img>
         </div>
       );
     }

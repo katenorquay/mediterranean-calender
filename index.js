@@ -72,7 +72,7 @@ const initialState = {
     ]}
   ],
   emojis: [
-    {id: 1, type: ItemTypes.COOLEMOJI, icon: 'https://s-media-cache-ak0.pinimg.com/736x/75/74/36/7574363a1729dfc747f8b963464b92da.jpg', position: [2, 5]},
+    {id: 1, type: ItemTypes.EMOJI, icon: 'https://s-media-cache-ak0.pinimg.com/736x/75/74/36/7574363a1729dfc747f8b963464b92da.jpg', position: [2, 5]},
     // {id: 2, type: ItemTypes.SADEMOJI, icon: 'http://pix.iemoji.com/images/emoji/apple/ios-9/256/face-with-open-mouth-and-cold-sweat.png', position: [0, 0]},
   ],
 }
