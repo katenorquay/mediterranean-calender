@@ -17,9 +17,18 @@ function collect(connect, monitor) {
 }
 
     function Emoji(props) {
+      console.log(props)
       const { connectDragSource, isDragging } = props;
       return connectDragSource(
-        <div className ='emoji'>♘</div>,
+        <div>
+          {props.state.emojis.map(function (emoji) {
+            return (
+              <div className='emoji'>
+                <img className='icon' src={emoji.icon}></img>
+              </div>
+            )
+          })}
+          </div>
       );
     }
 

@@ -18,13 +18,17 @@ function collect(connect, monitor) {
 
 
 function Time(props) {
-  var emojiX = props.state.emojiPosition[0];
-  var emojiY = props.state.emojiPosition[1];
+  var emojiX = props.state.emojis.map(function (emoji) {
+    return emoji.position[0]
+  })
+  var emojiY = props.state.emojis.map(function (emoji) {
+    return emoji.position[1]
+  })
   var connectDropTarget = props.connectDropTarget;
-    if(emojiX === props.x && emojiY === props.y) {
+    if(emojiX[0] === props.x && emojiY[0] === props.y) {
       return connectDropTarget (
         <div className={'time  time-' + props.y + '  hasEmoji'}>
-          <Emoji props={props}/>
+          <Emoji props={props} state={props.state}/>
         </div>
       )
     } else {
