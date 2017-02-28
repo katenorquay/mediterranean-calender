@@ -3,8 +3,10 @@ import { DragSource } from 'react-dnd';
 import ItemTypes from './ItemTypes';
 
 const emojiSource = {
-  beginDrag() {
-    return {};
+  beginDrag(props) {
+    return {
+      id: props.id
+    };
   },
 };
 
@@ -17,18 +19,12 @@ function collect(connect, monitor) {
 }
 
     function Emoji(props) {
-      console.log(props)
-      const { connectDragSource, isDragging } = props;
+      const { name, connectDragSource, isDragging } = props;
       return connectDragSource(
-        <div>
-          {props.state.emojis.map(function (emoji) {
-            return (
-              <div className='emoji'>
-                <img className='icon' src={emoji.icon}></img>
-              </div>
-            )
-          })}
-          </div>
+        <div className='emoji'>
+          {props.id}
+          <img className='icon' src={props.icon}></img>
+        </div>
       );
     }
 

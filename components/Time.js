@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Emoji from './Emoji'
 var DropTarget = require('react-dnd').DropTarget;
 import ItemTypes from './ItemTypes';
+import CreateEmoji from './CreateEmoji'
 
 var squareTarget = {
   drop: function (props, monitor) {
@@ -28,7 +29,7 @@ function Time(props) {
     if(emojiX[0] === props.x && emojiY[0] === props.y) {
       return connectDropTarget (
         <div className={'time  time-' + props.y + '  hasEmoji'}>
-          <Emoji props={props} state={props.state}/>
+        <CreateEmoji state={props.state}/>
         </div>
       )
     } else {
