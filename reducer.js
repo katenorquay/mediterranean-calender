@@ -9,31 +9,24 @@ function reducer(state, action) {
     emoji.x = payload[1]
     emoji.y = payload[2]
     return newState
+    case 'REPLACE_EMOJI':
+    console.log(payload)
+    var newEmoji = {
+      x: payload.x,
+      y: payload.y,
+      type: payload.type,
+      icon: payload.icon
+    }
+    var obj = newState.emojis
+    var id = Object.keys(obj).length + 1
+    newState.emojis[id] = newEmoji
+    return newState
     case 'RESET':
-      newState.board = null
       return newState
+      break;
     default:
     return newState
   }
 }
 
 export default reducer
-
-
-// case 'MOVE_EMOJI':
-//   newState.emojis.map(function (emoji) {
-//     return emoji.position[0] = payload[0]
-//   })
-//   newState.emojis.map(function (emoji) {
-//     return emoji.position[1] = payload[1]
-//   })
-//   newState.calendar.map(function (day) {
-//     day.times.find(function (time) {
-//       if (time.x === payload[0] && time.y === payload[1]) {
-//         time.hasEmoji = true
-//       }
-//       else {
-//         time.hasEmoji = false
-//       }
-//     })
-//   })

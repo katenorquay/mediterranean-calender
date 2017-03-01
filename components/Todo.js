@@ -9,6 +9,7 @@ function Todo(props) {
     <div>
       <h1>{props.name}</h1>
       <Week state={props.state} dispatch={props.dispatch}/>
+      <button onClick={() =>{props.dispatch({type: 'RESET'})}}>Reset</button>
     </div>
   )
 }

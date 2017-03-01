@@ -6,8 +6,8 @@ import ItemTypes from './ItemTypes';
 var squareTarget = {
   drop: function (props, monitor) {
     var item = monitor.getItem();
-    console.log('this is the item id', item.id)
     props.dispatch({type: 'MOVE_EMOJI', payload: [item.id, props.x, props.y]})
+    props.dispatch({type: 'REPLACE_EMOJI', payload: item })
   }
 };
 
@@ -21,11 +21,17 @@ function collect(connect, monitor) {
 
 function Time(props) {
   var connectDropTarget = props.connectDropTarget;
-      return connectDropTarget (
-        <div className={'time  time-' + props.y}>
-          <Emoji emoji={props.emoji}/>
-        </div>
-      )
+  if (props.emoji) {
+    return connectDropTarget (
+      <div className={'hasEmoji  time  -time' + props.y}>
+        <Emoji emoji={props.emoji}/>
+      </div>
+    )
+  } else {
+    return connectDropTarget(
+      <div className={'time  -time' + props.y}></div>
+    )
+  }
 }
 
 module.exports = DropTarget(ItemTypes.EMOJI, squareTarget, collect)(Time);
