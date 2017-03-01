@@ -75,15 +75,31 @@ const initialState = {
     1: {
       x: 3, y: 4,
       type: ItemTypes.EMOJI,
-      icon: 'cool'
+      icon: '♗'
     },
     2: {
       x: 0, y: 0,
       type: ItemTypes.EMOJI,
-      icon: 'sad'
+      icon: '♔'
+    },
+    3: {
+      x: 2, y: 1,
+      type: ItemTypes.EMOJI,
+      icon: '♛'
+    },
+    4: {
+      x: 4, y: 2,
+      type: ItemTypes.EMOJI,
+      icon: '♞'
+    },
+    5: {
+      x: 6, y: 4,
+      type: ItemTypes.EMOJI,
+      icon: '♜'
     }
   }
 }
+
 
 const store = createStore(reducer, initialState)
 
