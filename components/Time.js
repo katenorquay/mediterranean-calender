@@ -19,24 +19,12 @@ function collect(connect, monitor) {
 
 
 function Time(props) {
-  var emojiX = props.state.emojis.map(function (emoji) {
-    return emoji.position[0]
-  })
-  var emojiY = props.state.emojis.map(function (emoji) {
-    return emoji.position[1]
-  })
   var connectDropTarget = props.connectDropTarget;
-    if(emojiX[0] === props.x && emojiY[0] === props.y) {
       return connectDropTarget (
-        <div className={'time  time-' + props.y + '  hasEmoji'}>
-        <CreateEmoji state={props.state}/>
+        <div className={'time  time-' + props.y}>
+          <Emoji emoji={props.emoji}/>
         </div>
       )
-    } else {
-      return connectDropTarget (
-        <div className={'time  time-' + props.y}></div>
-      )
-    }
 }
 
 module.exports = DropTarget(ItemTypes.EMOJI, squareTarget, collect)(Time);

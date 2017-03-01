@@ -20,11 +20,18 @@ function collect(connect, monitor) {
 
     function Emoji(props) {
       const { id, connectDragSource, isDragging } = props;
-      return connectDragSource(
-        <div className='emoji'>
-          <img className='icon' src={props.icon}></img>
-        </div>
-      );
+      console.log(props)
+      if (props.emoji) {
+        return connectDragSource(
+          <div className='emoji'>
+            {props.emoji.icon}
+          </div>
+        );
+      } else {
+        return connectDragSource (
+          <div></div>
+        )
+      }
     }
 
   module.exports = DragSource(ItemTypes.EMOJI, emojiSource, collect)(Emoji)
