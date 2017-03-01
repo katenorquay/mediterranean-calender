@@ -72,15 +72,13 @@ const initialState = {
     ]}
   ],
   emojis: {
-    'coolEmoji': {
+    1: {
       x: 3, y: 4,
-      id: 1,
       type: ItemTypes.EMOJI,
       icon: 'cool'
     },
-    'sadEmoji': {
+    2: {
       x: 0, y: 0,
-      id: 2,
       type: ItemTypes.EMOJI,
       icon: 'sad'
     }

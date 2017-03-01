@@ -19,7 +19,6 @@ function CreateSquare(props) {
         var x = time.x
         var y = time.y
         var emoji = getPieceBySquare(x, y)
-        console.log(emoji)
         return (
           <Time state={props.state} day={props.day} dispatch={props.dispatch} x={x} y={y} emoji={emoji}/>
         )

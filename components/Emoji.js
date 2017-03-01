@@ -5,7 +5,7 @@ import ItemTypes from './ItemTypes';
 const emojiSource = {
   beginDrag(props) {
     return {
-      id: props.id
+      id: props.emoji.id
     };
   },
 };
@@ -20,7 +20,6 @@ function collect(connect, monitor) {
 
     function Emoji(props) {
       const { id, connectDragSource, isDragging } = props;
-      console.log(props)
       if (props.emoji) {
         return connectDragSource(
           <div className='emoji'>

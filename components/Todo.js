@@ -5,7 +5,6 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 function Todo(props) {
-  console.log(props.state)
   return (
     <div>
       <h1>{props.name}</h1>
