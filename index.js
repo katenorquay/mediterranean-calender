@@ -76,13 +76,13 @@ const initialState = {
       x: 3, y: 4,
       id: 1,
       type: ItemTypes.EMOJI,
-      icon: 'https://s-media-cache-ak0.pinimg.com/736x/75/74/36/7574363a1729dfc747f8b963464b92da.jpg'
+      icon: 'cool'
     },
     'sadEmoji': {
       x: 0, y: 0,
       id: 2,
-      type: ItemTypes.SAD,
-      icon: 'http://pix.iemoji.com/images/emoji/apple/ios-9/256/face-with-open-mouth-and-cold-sweat.png'
+      type: ItemTypes.EMOJI,
+      icon: 'sad'
     }
   }
 }

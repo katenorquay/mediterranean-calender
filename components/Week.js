@@ -20,7 +20,7 @@ function Week({state, dispatch}) {
 function getPieceBySquare(x, y) {
   var e, eObj, emojis = state.emojis;
   for ( var e in emojis ) {
-    if ( emojis[e].x == x && emojis[e].y == y ) {
+    if ( emojis[e].x === x && emojis[e].y === y ) {
       eObj = emojis[e];
       eObj.id = e;
       return eObj;
@@ -32,13 +32,17 @@ function getPieceBySquare(x, y) {
 function renderPieceInSquare(x, y) {
   var emoji = getPieceBySquare(x, y);
   if ( emoji ) {
-    return ( <Emoji board={this} emoji={emoji.icon} id={emoji.id} /> );
+    return ( <Emoji week={this} emoji={emoji.icon} id={emoji.id} /> );
   }
     return false;
   }
 
-function renderSquare(x, y) {
-  return ( <CreateSquare key={ x + y * 8 } x={x} y={y}>{renderPieceInSquare(x, y)}</CreateSquare> );
+function renderSquare(title, x, y) {
+  var emoji = renderPieceInSquare(x, y)
+  if (emoji) {
+    var newEmoji = emoji.props.emoji
+  }
+  return ( <CreateSquare key={ x + y * 8 } x={x} y={y} emoji={newEmoji}></CreateSquare> );
 }
 
 var squares = []
@@ -47,7 +51,7 @@ return (
   <div className='week'>
   {state.calendar.map(function (day) {
       day.times.map(function (time) {
-        squares.push(renderSquare(time.x, time.y))
+        squares.push(renderSquare(time.title, time.x, time.y))
       })
     })
   }

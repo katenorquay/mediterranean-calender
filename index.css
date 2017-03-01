@@ -14,4 +14,11 @@
   border: solid 2px black;
   height: 100px;
   width: 100px;
-}*/
+}
+
+.emoji {
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+}

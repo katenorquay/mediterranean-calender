@@ -7,7 +7,6 @@ const emojiSource = {
   beginDrag(props) {
     return {
       id: props.id,
-      board: props.week
     };
   },
 };
@@ -22,10 +21,9 @@ function collect(connect, monitor) {
 
     function Emoji(props) {
       const { id, connectDragSource, isDragging } = props;
+      console.log('emoji props', props)
       return connectDragSource(
-        <div className='emoji'>
-          <img className='icon' src={props.icon}></img>
-        </div>
+        <div className='emoji'>{props.emoji}</div>
       );
     }
 
