@@ -34,15 +34,11 @@ function renderPieceInSquare(x, y) {
   if ( emoji ) {
     return ( <Emoji week={this} emoji={emoji.icon} id={emoji.id} /> );
   }
-    return false;
+    return <div>'empty'</div>
   }
 
-function renderSquare(title, x, y) {
-  var emoji = renderPieceInSquare(x, y)
-  if (emoji) {
-    var newEmoji = emoji.props.emoji
-  }
-  return ( <CreateSquare key={ x + y * 8 } x={x} y={y} emoji={newEmoji}></CreateSquare> );
+function renderSquare(x, y) {
+  return ( <CreateSquare key={ x + y * 8 } x={x} y={y}>{renderPieceInSquare(x, y)}</CreateSquare> );
 }
 
 var squares = []
@@ -51,7 +47,7 @@ return (
   <div className='week'>
   {state.calendar.map(function (day) {
       day.times.map(function (time) {
-        squares.push(renderSquare(time.title, time.x, time.y))
+        squares.push(renderSquare(time.x, time.y))
       })
     })
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 function Time(props) {
-  console.log('the time props', props.emoji)
+  console.log('the time props', props)
     return (
-      <div className='time'>{props.emoji}</div>
+      <div className='time'>{props.children}</div>
     )
 }
 

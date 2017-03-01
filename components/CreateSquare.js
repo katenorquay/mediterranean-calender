@@ -21,8 +21,8 @@ function collect(connect, monitor) {
 function CreateSquare(props) {
   var connectDropTarget = props.connectDropTarget;
   return connectDropTarget(
-    <div className='square'>
-      <Time key={props.key} title={props.title} emoji={props.emoji}></Time>
+    <div>
+      <Time key={props.key}>{props.children}</Time>
     </div>
   )
 }
