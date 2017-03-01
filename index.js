@@ -6,16 +6,18 @@ import {createStore} from 'redux'
 import ItemTypes from './components/ItemTypes';
 
 const initialState = {
-  calendar: [
-    {name: 'Emoji',
+  emojiCon: [
+    {name: 'emoji',
     times: [
-      {id:1, x: 0, y: 0, hasEmoji: false},
-      {id:2, x: 0, y: 1, hasEmoji: false},
-      {id:3, x: 0, y: 2, hasEmoji: false},
-      {id:4, x: 0, y: 3, hasEmoji: false},
-      {id:5, x: 0, y: 4, hasEmoji: false},
-      {id:6, x: 0, y: 5, hasEmoji: false}
-    ]},
+        {id:1, x: 0, y: 0, hasEmoji: false},
+        {id:2, x: 0, y: 1, hasEmoji: false},
+        {id:3, x: 0, y: 2, hasEmoji: false},
+        {id:4, x: 0, y: 3, hasEmoji: false},
+        {id:5, x: 0, y: 4, hasEmoji: false},
+        {id:6, x: 0, y: 5, hasEmoji: false}
+      ]},
+    ],
+  calendar: [
     {name: 'Monday',
     times:[
       {id:1, title:'morning', x: 1, y: 0, hasEmoji: false},
