@@ -10,7 +10,6 @@ function reducer(state, action) {
     emoji.y = payload[2]
     return newState
     case 'REPLACE_EMOJI':
-    console.log(payload)
     var newEmoji = {
       x: payload.x,
       y: payload.y,
@@ -22,6 +21,14 @@ function reducer(state, action) {
     newState.emojis[id] = newEmoji
     return newState
     case 'RESET':
+    var obj = newState.emojis
+    var keys = Object.keys(obj)
+    for (var i = 0; i < keys.length; i++) {
+      if (obj[keys[i]].x !== 0) {
+        delete obj[keys[i]] 
+      }
+    }
+    console.log(newState)
       return newState
       break;
     default:
