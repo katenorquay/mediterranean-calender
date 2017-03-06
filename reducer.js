@@ -20,12 +20,13 @@ function reducer(state, action) {
     var id = Object.keys(obj).length + 1
     newState.emojis[id] = newEmoji
     return newState
+    break;
     case 'RESET':
     var obj = newState.emojis
     var keys = Object.keys(obj)
     for (var i = 0; i < keys.length; i++) {
       if (obj[keys[i]].x !== 0) {
-        delete obj[keys[i]] 
+        delete obj[keys[i]]
       }
     }
     console.log(newState)
