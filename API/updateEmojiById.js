@@ -3,7 +3,7 @@ import request from 'superagent'
 module.exports = (dispatch, emojiId, newCoords) => {
 
   request
-    .get(`${url}/api/v1/emojis/edit/${emojiId}`)
+    .get(`http://localhost:3000/api/v1/emojis/edit/${emojiId}`)
     .send(newCoords)
     .withCredentials()
     .end((err, res) => {

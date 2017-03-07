@@ -1,18 +1,16 @@
 import request from 'superagent'
 
-module.exports = (dispatch, userInfo) => {
+module.exports = (userInfo, dispatch) => {
   dispatch({type: 'LOGIN_INIT'})
-
   request
-    .post(`${url}/api/v1/users/login`)
+    .post(`http://localhost:3000/api/v1/users/signup`)
     .send(userInfo)
-    .withCredentials()
     .end((err, res) => {
       if (err) {
+        console.log('this is the api error', err)
         dispatch({type: 'LOGIN_UNSUCCESSFUL'})
       } else {
-        var userId = res.body.id
-        getEmojisByUser(dispatch, userId)
+        console.log('this is the api res', res.body)
         dispatch({type: 'LOGIN_SUCCESSFUL', payload: res.body.user})
       }
     })

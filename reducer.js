@@ -8,7 +8,7 @@ function reducer(state, action) {
     newState.LoginInProgress = true
     return newState
     break;
-    case 'LOGIN_UNSUCCESSFUL'
+    case 'LOGIN_UNSUCCESSFUL':
     newState.LoginInProgress = false
     newState.signedIn = false
     return newState
