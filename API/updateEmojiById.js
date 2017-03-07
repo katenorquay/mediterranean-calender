@@ -10,7 +10,7 @@ module.exports = (dispatch, emojiId, newCoords) => {
       if (err) {
         console.log(err)
       } else {
-        dispatch({type: 'UPDATE_EMOJI', payload: res})
+        dispatch({type: 'UPDATE_EMOJI_POSITION', payload: res})
       }
     })
 }

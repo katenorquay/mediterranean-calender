@@ -4,6 +4,27 @@ function reducer(state, action) {
   var newState = clone(state)
   var {type, payload} = action
   switch(type) {
+    case 'LOGIN_INIT':
+    newState.LoginInProgress = true
+    return newState
+    break;
+    case 'LOGIN_UNSUCCESSFUL'
+    newState.LoginInProgress = false
+    newState.signedIn = false
+    return newState
+    break;
+    case 'LOGIN_SUCCESSFUL':
+    newState.LoginInProgress = false
+    newState.signedIn = true
+    return newState
+    break;
+    case 'EMOJIS_INIT':
+    newState.emojis = payload
+    return newState
+    break;
+    case 'UPDATE_EMOJI_POSITION':
+    return newState
+    break;
     case 'MOVE_EMOJI':
     var emoji = newState.emojis[payload[0]]
     emoji.x = payload[1]
