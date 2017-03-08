@@ -1,1 +1,8 @@
 @import url("css/style.css");
+
+
+.emojiCon {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}

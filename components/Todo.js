@@ -3,17 +3,18 @@ import Week from './Week'
 import Emoji from './Emoji'
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import signupApiCall from '../API/signupApiCall'
+import loginService from '../API/loginService'
+import Signup from './Signup'
 
 function Todo(props) {
-  function signup(e) {
+  function login(e) {
     e.preventDefault()
     var userInfo = {
       username: document.getElementById('username').value,
       password: document.getElementById('password').value
     }
     console.log(userInfo)
-    signupApiCall(userInfo, props.dispatch)
+    loginService(userInfo, props.dispatch)
   }
 
   if (props.state.signedIn) {
@@ -27,12 +28,13 @@ function Todo(props) {
   } else {
     return (
       <div>
-        <h1>Signup to Mediterranean Calendar</h1>
+        <h1>Login to Mediterranean Calendar</h1>
         <form>
           <input placeholder='username' type='text' id='username' />
           <input placeholder='password' type='password' id='password' />
-          <input type='submit' value='Signup!' onClick={signup} />
+          <input type='submit' value='Login!' onClick={login} />
         </form>
+        <Signup dispatch={props.dispatch} />
       </div>
     )
   }

@@ -84,38 +84,7 @@ const initialState = {
       {id:6, title: 'dinner', x: 7, y: 5}
     ]}
   ],
-  emojis: {
-    1: {
-      x: 0, y: 0,
-      type: ItemTypes.EMOJI,
-      icon: '♗'
-    },
-    2: {
-      x: 0, y: 1,
-      type: ItemTypes.EMOJI,
-      icon: '♔'
-    },
-    3: {
-      x: 0, y: 2,
-      type: ItemTypes.EMOJI,
-      icon: '♛'
-    },
-    4: {
-      x: 0, y: 3,
-      type: ItemTypes.EMOJI,
-      icon: '♞'
-    },
-    5: {
-      x: 0, y: 4,
-      type: ItemTypes.EMOJI,
-      icon: '♜'
-    },
-    6: {
-      x: 0, y: 5,
-      type: ItemTypes.EMOJI,
-      icon: '♘'
-    }
-  }
+  emojis: []
 }
 
 

@@ -6,10 +6,10 @@ const emojiSource = {
   beginDrag(props) {
     return {
       id: props.emoji.id,
+      userId: props.emoji.userId,
       icon: props.emoji.icon,
       x: props.emoji.x,
       y: props.emoji.y,
-      type: props.emoji.type
     };
   },
 };
@@ -22,13 +22,13 @@ function collect(connect, monitor) {
   };
 }
 
-    function Emoji(props) {
-      const { id, connectDragSource, isDragging } = props;
-        return connectDragSource(
-          <div className='emoji'>
-            {props.emoji.icon}
-          </div>
-        );
-    }
+function Emoji(props) {
+  const { id, connectDragSource, isDragging } = props;
+    return connectDragSource(
+      <div className='emoji'>
+        {props.emoji.icon}
+      </div>
+    );
+}
 
-  module.exports = DragSource(ItemTypes.EMOJI, emojiSource, collect)(Emoji)
+module.exports = DragSource(ItemTypes.EMOJI, emojiSource, collect)(Emoji)

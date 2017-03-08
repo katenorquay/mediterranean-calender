@@ -18,6 +18,13 @@ function reducer(state, action) {
     newState.signedIn = true
     return newState
     break;
+    case 'SIGNUP_SUCCESSFUL':
+    newState.LoginInProgress = false
+    newState.signedIn = true
+    console.log(payload)
+    newState.emojis = payload
+    return newState
+    break;
     case 'EMOJIS_INIT':
     newState.emojis = payload
     return newState

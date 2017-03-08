@@ -1,7 +1,10 @@
 import request from 'superagent'
 
-module.exports = (dispatch, emojiId, newCoords) => {
-
+module.exports = (dispatch, emojiId, x, y) => {
+  var newCoords = {
+    x: x,
+    y: y
+  }
   request
     .get(`http://localhost:3000/api/v1/emojis/edit/${emojiId}`)
     .send(newCoords)
@@ -10,6 +13,7 @@ module.exports = (dispatch, emojiId, newCoords) => {
       if (err) {
         console.log(err)
       } else {
+        console.log(res)
         dispatch({type: 'UPDATE_EMOJI_POSITION', payload: res})
       }
     })

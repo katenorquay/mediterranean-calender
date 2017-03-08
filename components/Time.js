@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import Emoji from './Emoji'
 var DropTarget = require('react-dnd').DropTarget;
 import ItemTypes from './ItemTypes';
+import updateEmojiById from '../API/updateEmojiById'
 
 var squareTarget = {
   drop: function (props, monitor) {
     var item = monitor.getItem();
-    props.dispatch({type: 'MOVE_EMOJI', payload: [item.id, props.x, props.y]})
-    props.dispatch({type: 'REPLACE_EMOJI', payload: item })
+    updateEmojiById(props.dispatch, item.id, props.x, props.y)
+    // props.dispatch({type: 'MOVE_EMOJI', payload: [item.id, props.x, props.y]})
+    // props.dispatch({type: 'REPLACE_EMOJI', payload: item })
   }
 };
 
