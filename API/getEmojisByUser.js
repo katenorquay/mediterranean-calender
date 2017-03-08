@@ -1,15 +1,14 @@
 import request from 'superagent'
 
-module.exports = (userId, dispatch) => {
+module.exports = (userId, callback) => {
   request
-    .post(`http://localhost:3000/api/v1/emojis`)
-    .send(userId)
+    .post(`http://localhost:3000/api/v1/emojis/${userId}`)
     .withCredentials()
     .end((err, res) => {
       if (err) {
         console.log(err)
       } else {
-        dispatch({type: 'EMOJIS_INIT', payload: res})
+        callback(res.body)
       }
     })
 }

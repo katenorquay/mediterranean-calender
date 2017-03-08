@@ -12,8 +12,13 @@ module.exports = (userInfo, dispatch) => {
         console.log('this is the api error', err)
         dispatch({type: 'LOGIN_UNSUCCESSFUL'})
       } else {
-        console.log('this is the api res', res.body.user.id)
-        generateEmojisByUser(res.body.user.id, dispatch)
+        getEmojisByUser(res.body.user.id, function(emojis) {
+          if (emojis.length > 0) {
+            dispatch({type: 'EMOJIS_INIT', payload: emojis})
+          } else {
+            generateEmojisByUser(res.body.user.id, dispatch)
+          }
+        })
       }
     })
 }

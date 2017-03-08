@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-module.exports = (dispatch, emojiId, newCoords) => {
+module.exports = (userId, dispatch) => {
 
   request
-    .get(`http://localhost:3000/api/v1/emojis/edit/${emojiId}`)
+    .get(`http://localhost:3000/api/v1/emojis/reset`)
     .send(newCoords)
     .withCredentials()
     .end((err, res) => {
