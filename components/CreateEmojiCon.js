@@ -18,7 +18,7 @@ function CreateEmojiCon(props) {
           )
         } else {
           return (
-            <div></div>
+            <div className='emojiCon'></div>
           )
         }
       })}

@@ -11,6 +11,7 @@ module.exports = (userId, dispatch) => {
       } else {
         console.log(res.body)
         dispatch({type: 'EMOJIS_INIT', payload: res.body})
+        dispatch({type: 'LOGIN_SUCCESSFUL'})
       }
     })
 }
