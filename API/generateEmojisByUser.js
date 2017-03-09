@@ -9,7 +9,8 @@ module.exports = (userId, dispatch) => {
       if (err) {
         console.log(err)
       } else {
-        dispatch({type: 'EMOJIS_INIT', payload: res})
+        console.log(res.body)
+        dispatch({type: 'EMOJIS_INIT', payload: res.body})
       }
     })
 }
