@@ -1,16 +1,16 @@
 import request from 'superagent'
+import generateEmojisByUser from './generateEmojisByUser'
 
 module.exports = (userId, dispatch) => {
-
   request
-    .get(`http://localhost:3000/api/v1/emojis/reset`)
-    .send(newCoords)
+    .post(`http://localhost:3000/api/v1/emojis/reset`)
+    .send(userId)
     .withCredentials()
     .end((err, res) => {
       if (err) {
         console.log(err)
       } else {
-        dispatch({type: 'UPDATE_EMOJI', payload: res})
+        generateEmojisByUser(userId, dispatch)
       }
     })
 }

@@ -19,6 +19,7 @@ module.exports = (userInfo, dispatch) => {
             dispatch({type: 'EMOJIS_INIT', payload: emojis})
             dispatch({type: 'LOGIN_SUCCESSFUL'})
           } else {
+            console.log('the user id for login', res.body.user.id)
             generateEmojisByUser(res.body.user.id, dispatch)
           }
         })
