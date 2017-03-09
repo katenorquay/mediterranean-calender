@@ -18,35 +18,28 @@ function reducer(state, action) {
     newState.signedIn = true
     return newState
     break;
-    case 'SIGNUP_SUCCESSFUL':
-    newState.LoginInProgress = false
-    newState.signedIn = true
-    console.log(payload)
-    newState.emojis = payload
-    return newState
-    break;
     case 'EMOJIS_INIT':
     newState.emojis = payload
     return newState
     break;
     case 'UPDATE_EMOJI_POSITION':
+    newState.emojis.map(function (emoji) {
+      if (emoji.id === payload.id) {
+        emoji.x = payload.x
+        emoji.y = payload.y
+      }
+    })
     return newState
     break;
-    case 'MOVE_EMOJI':
-    var emoji = newState.emojis[payload[0]]
-    emoji.x = payload[1]
-    emoji.y = payload[2]
-    return newState
     case 'REPLACE_EMOJI':
     var newEmoji = {
-      x: payload.x,
-      y: payload.y,
-      type: payload.type,
-      icon: payload.icon
+      id: payload[0],
+      userId: payload[1],
+      x: payload[2],
+      y: payload[3],
+      icon: payload[4]
     }
-    var obj = newState.emojis
-    var id = Object.keys(obj).length + 1
-    newState.emojis[id] = newEmoji
+    newState.emojis.push(newEmoji)
     return newState
     break;
     case 'RESET':

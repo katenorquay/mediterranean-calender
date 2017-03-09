@@ -6,15 +6,14 @@ module.exports = (dispatch, emojiId, x, y) => {
     y: y
   }
   request
-    .get(`http://localhost:3000/api/v1/emojis/edit/${emojiId}`)
+    .post(`http://localhost:3000/api/v1/emojis/edit/${emojiId}`)
     .send(newCoords)
     .withCredentials()
     .end((err, res) => {
       if (err) {
-        console.log(err)
+        console.log('getting an error', err)
       } else {
-        console.log(res)
-        dispatch({type: 'UPDATE_EMOJI_POSITION', payload: res})
+        dispatch({type: 'UPDATE_EMOJI_POSITION', payload: res.body.emoji})
       }
     })
 }
