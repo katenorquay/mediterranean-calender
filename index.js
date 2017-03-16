@@ -6,7 +6,8 @@ import {createStore} from 'redux'
 import ItemTypes from './components/ItemTypes';
 
 const initialState = {
-  LoginInProgress: false,
+  loginInProgress: false,
+  loginUnsuccessful: false,
   signedIn: false,
   emojiCon: [
     {name: 'emoji',

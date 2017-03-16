@@ -6,7 +6,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import loginService from '../API/loginService'
 import Signup from './Signup'
 import Reset from '../API/Reset'
-import EmojiCon from './EmojiCon'
+import EmojiPicker from './EmojiPicker'
 
 function App({name, state, dispatch}) {
   function login(e) {
@@ -29,7 +29,7 @@ function App({name, state, dispatch}) {
       <div>
         <h1>{name}</h1>
         <Week state={state} dispatch={dispatch}/>
-        <EmojiCon state={state} dispatch={dispatch} />
+        <EmojiPicker state={state} dispatch={dispatch} />
         <button onClick={reset}>Reset</button>
       </div>
     )

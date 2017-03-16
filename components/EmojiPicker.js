@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Emoji from './Emoji'
 import getPieceBySquare from '../functions/getPieceBySquare'
 
-function EmojiCon({state, dispatch}) {
+function EmojiPicker({state, dispatch}) {
   return (
     <div>
       {state.emojiCon[0].times.map(function (time) {
@@ -23,4 +23,4 @@ function EmojiCon({state, dispatch}) {
   )
 }
 
-module.exports = EmojiCon
+module.exports = EmojiPicker

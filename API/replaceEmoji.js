@@ -15,7 +15,6 @@ module.exports = (dispatch, x, y, icon, userId) => {
       if (err) {
         console.log('getting an error', err)
       } else {
-        console.log('the new emoji', res.body.emoji)
         dispatch({type:'REPLACE_EMOJI', payload: [res.body.emoji, userId, x, y, icon]})
       }
     })
