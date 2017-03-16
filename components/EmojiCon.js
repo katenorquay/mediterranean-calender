@@ -2,14 +2,11 @@ import React, { Component } from 'react'
 import Emoji from './Emoji'
 import getPieceBySquare from '../functions/getPieceBySquare'
 
-function CreateEmojiCon(props) {
-
+function EmojiCon({state, dispatch}) {
   return (
     <div>
-      {props.state.emojiCon[0].times.map(function (time) {
-        var x = time.x
-        var y = time.y
-        var emoji = getPieceBySquare(props.state, x, y)
+      {state.emojiCon[0].times.map(function (time) {
+        var emoji = getPieceBySquare(state, time.x, time.y)
         if (emoji) {
           return (
             <div>
@@ -18,7 +15,7 @@ function CreateEmojiCon(props) {
           )
         } else {
           return (
-            <div className='emojiCon'></div>
+            <div></div>
           )
         }
       })}
@@ -26,4 +23,4 @@ function CreateEmojiCon(props) {
   )
 }
 
-module.exports = CreateEmojiCon
+module.exports = EmojiCon

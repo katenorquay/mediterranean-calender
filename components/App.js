@@ -6,33 +6,35 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import loginService from '../API/loginService'
 import Signup from './Signup'
 import Reset from '../API/Reset'
+import EmojiCon from './EmojiCon'
 
-function Todo(props) {
+function App({name, state, dispatch}) {
   function login(e) {
     e.preventDefault()
     var userInfo = {
       username: document.getElementById('username').value,
       password: document.getElementById('password').value
     }
-    loginService(userInfo, props.dispatch)
+    loginService(userInfo, dispatch)
   }
 
   function reset(e) {
     e.preventDefault()
-    var userId = props.state.emojis[0].userId
-    console.log(userId)
-    Reset(userId, props.dispatch)
+    var userId = state.emojis[0].userId
+    Reset(userId, dispatch)
   }
 
-  if (props.state.signedIn) {
+  if (state.signedIn) {
     return (
       <div>
-      <h1>{props.name}</h1>
-      <Week state={props.state} dispatch={props.dispatch}/>
-      <button onClick={reset}>Reset</button>
+        <h1>{name}</h1>
+        <Week state={state} dispatch={dispatch}/>
+        <EmojiCon state={state} dispatch={dispatch} />
+        <button onClick={reset}>Reset</button>
       </div>
     )
-  } else {
+  }
+   else {
     return (
       <div>
         <h1>Login to Mediterranean Calendar</h1>
@@ -41,11 +43,11 @@ function Todo(props) {
           <input placeholder='password' type='password' id='password' />
           <input type='submit' value='Login!' onClick={login} />
         </form>
-        <Signup dispatch={props.dispatch} />
+        <Signup dispatch={dispatch} />
       </div>
     )
   }
 }
 
 
-module.exports = DragDropContext(HTML5Backend)(Todo)
+module.exports = DragDropContext(HTML5Backend)(App)

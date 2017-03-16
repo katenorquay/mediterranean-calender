@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Todo from './components/Todo'
+import App from './components/App'
 import reducer from './reducer.js'
 import {createStore} from 'redux'
 import ItemTypes from './components/ItemTypes';
@@ -27,7 +27,7 @@ const initialState = {
       {id:3, title:'lunch', x: 1, y: 2},
       {id:4, title: 'afternoon', x: 1, y: 3},
       {id:5, title: 'late afternoon', x: 1, y: 4},
-      {id:6, title: 'dinner', x: 1, y: 5}
+      {id:6, title: 'dinner', x: 1, y: 5},
     ]},
     {name: 'Tuesday',
     times:[
@@ -94,7 +94,7 @@ const main = document.querySelector('main')
 
 store.subscribe( () => {
   var state = store.getState()
-  render(<Todo name='Mediterranean Calendar' state={state} dispatch={store.dispatch} />, main)
+  render(<App name='Mediterranean Calendar' state={state} dispatch={store.dispatch} />, main)
 })
 
 store.dispatch({type: 'INIT'})

@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import signupService from '../API/signupService'
 
-function Signup(props) {
+function Signup({dispatch}) {
   function signup(e) {
     e.preventDefault()
     var userInfo = {
       username: document.getElementById('signupusername').value,
       password: document.getElementById('signuppassword').value
     }
-    console.log(userInfo)
-    signupService(userInfo, props.dispatch)
+    signupService(userInfo, dispatch)
   }
 
   return (

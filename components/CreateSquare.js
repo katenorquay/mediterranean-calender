@@ -2,15 +2,13 @@ import React, { Component } from 'react'
 import Time from './Time'
 import getPieceBySquare from '../functions/getPieceBySquare'
 
-function CreateSquare(props) {
+function CreateSquare({state, day, dispatch}) {
   return (
     <div>
-      {props.day.times.map(function (time) {
-        var x = time.x
-        var y = time.y
-        var emoji = getPieceBySquare(props.state, x, y)
+      {day.times.map(function (time) {
+        var emoji = getPieceBySquare(state, time.x, time.y)
         return (
-          <Time state={props.state} day={props.day} dispatch={props.dispatch} x={x} y={y} emoji={emoji}/>
+          <Time dispatch={dispatch} x={time.x} y={time.y} emoji={emoji}/>
         )
       })}
     </div>

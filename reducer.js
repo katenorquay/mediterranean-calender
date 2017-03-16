@@ -42,17 +42,6 @@ function reducer(state, action) {
     newState.emojis.push(newEmoji)
     return newState
     break;
-    case 'RESET':
-    var obj = newState.emojis
-    var keys = Object.keys(obj)
-    for (var i = 0; i < keys.length; i++) {
-      if (obj[keys[i]].x !== 0) {
-        delete obj[keys[i]]
-      }
-    }
-    console.log(newState)
-      return newState
-      break;
     default:
     return newState
   }
