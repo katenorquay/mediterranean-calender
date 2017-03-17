@@ -3,7 +3,7 @@ import Day from './Day'
 
 function Week({state, dispatch}) {
   return (
-      <div>
+      <div className="week">
         <Day state={state} dispatch={dispatch}/>
       </div>
   )

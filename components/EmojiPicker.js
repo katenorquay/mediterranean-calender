@@ -4,7 +4,7 @@ import getPieceBySquare from '../functions/getPieceBySquare'
 
 function EmojiPicker({state, dispatch}) {
   return (
-    <div>
+    <div className="emoji-picker">
       {state.emojiCon[0].times.map(function (time) {
         var emoji = getPieceBySquare(state, time.x, time.y)
         if (emoji) {

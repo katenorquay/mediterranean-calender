@@ -28,8 +28,10 @@ function App({name, state, dispatch}) {
     return (
       <div>
         <h1>{name}</h1>
-        <Week state={state} dispatch={dispatch}/>
-        <EmojiPicker state={state} dispatch={dispatch} />
+        <div className="frame">
+          <EmojiPicker state={state} dispatch={dispatch} />
+          <Week state={state} dispatch={dispatch}/>
+        </div>
         <button onClick={reset}>Reset</button>
       </div>
     )
